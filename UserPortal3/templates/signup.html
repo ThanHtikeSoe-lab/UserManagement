@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://kit.fontawesome.com/72ebfb6e6b.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: rgb(156, 154, 154);
+        }
+.m1{
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    margin-left: 20%;
+    border-radius: 20px;
+}
+.m3{
+    background-color: rgb(10, 5, 78);
+    color: bisque;
+    width: 400px;
+    height: 500px;
+    font-weight: bold;
+ 
+  border-radius: 20px 80px 80px 20px;
+}
+.m3>h1{
+    position: absolute;
+    top: 20%;
+    left: 27%;
+}
+.m3>p{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+}
+.btn1{
+    position: absolute;
+    top: 45%;
+    left: 33%;
+   
+  background-color: #1edbf4;
+  border: none;
+  color: white;
+
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+
+
+
+}
+.btn1:hover {opacity: 0.6}
+.m2{
+    width: 400px;
+    height: 500px;
+    position: absolute;
+  left: 50%;
+  top: 5%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: blueviolet;
+
+}
+input[type=text]{
+    width: 45%;
+   
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid blue
+}
+input[type=password]{
+    width: 45%;
+ 
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid blue;
+}
+.submit{
+    border: 2px solid white;
+    background-color: white;
+    color: green;
+    height: 50px;
+    width: 50px;
+   
+    font-size: 40px;
+}
+.submit:hover {opacity: 0.6}
+.sub1{
+    margin-left: 75%;
+   margin-top: -13.5%;
+   
+}
+.a{
+   
+    margin-top: 8%;
+}
+a{
+    color: rgb(38, 0, 255);
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+/* accounts/static/accounts/css/style.css */
+
+
+
+    </style>
+</head>
+
+<body>
+   
+    <form method="POST">
+        {% csrf_token %}
+        <div class="m1">
+            <div class="m3">
+                <h1>Welcome Back!</h1>
+                <p>Enter your personal details to use all features</p>
+                <button class="btn1"><a href="{% url 'login' %}">Log In</a></button>
+            </div>
+            <div class="m2">
+                <h1>Signup</h1>
+                <label for="{{ form.username.id_for_label }}">Username</label>
+                <div class="custom-password-field">   {{ form.username }}
+           {{ form.username.errors }}</div>
+        
+        <br> <label for="{{ form.password1.id_for_label }}">Password</label>
+      <div class="input2">  {{ form.password1}}
+        {{ form.password1.errors }}</div>
+        <br> <label for="{{ form.password2.id_for_label }}">Confirmed Password</label>
+      <div class="input3">  {{ form.password2 }}
+        {{ form.password2.errors }}</div> 
+    
+        <!-- Add more fields as needed -->
+        <br> <div class="a"><a href="{% url 'login' %}" >Already have Account </a></div>
+       <br> <div class="sub1"> <button class="submit"><i class='fa-solid fa-right-to-bracket'> </i></button></div>
+            </div>
+        </div>
+    </form>
+ 
+</body>
+
+</html>

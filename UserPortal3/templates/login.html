@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://kit.fontawesome.com/72ebfb6e6b.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: rgb(156, 154, 154);
+        }
+.m1{
+    background-color: aliceblue;
+    width: 800px;
+    height: 500px;
+    margin-left: 20%;
+    border-radius: 20px;
+ 
+}
+.m3{
+    background-color: rgb(10, 5, 78);
+    color: bisque;
+    width: 400px;
+    height: 500px;
+    position: absolute;
+  left: 50%;
+ 
+  border-radius: 80px 20px 20px 80px;
+}
+
+.m3>h1{
+    position: absolute;
+    top: 20%;
+    left: 27%;
+}
+.m3>p{
+    position: absolute;
+    top: 37%;
+    left: 17%;
+    word-spacing: 10px;
+}
+.btn2{
+    position: absolute;
+    top:65%;
+    left: 42%;
+    
+  background-color: #1edbf4;
+  border: none;
+  color: white;
+
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+
+
+
+}
+.m2{position: absolute;
+  left: 25%;
+  top: 5%;
+}
+input[type=text]{
+    width: 100%;
+   
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid blue
+}
+input[type=password]{
+    width: 100%;
+ 
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid blue;
+}
+.submit2{
+    border: 2px solid white;
+    background-color: white;
+    color: rgb(92, 116, 8);
+    height: 50px;
+    width: 50px;
+   
+    font-size: 40px;
+}
+.submit2:hover {opacity: 0.6}
+.sub2{
+ 
+margin-top: -17%;
+}
+.a2{
+    width: 200px;
+    margin-left: 55%;
+   margin-top: 50%;
+}
+a{
+    color: rgb(38, 0, 255);
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+
+    </style>
+</head>
+
+<body>
+ 
+   
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="m1">
+       
+            <div class="m2">
+                <h1>Login</h1>
+        <label for="{{ form.username.id_for_label }}">Username</label>
+      <br>  {{ form.username }}
+        {{ form.username.errors }}
+        
+        <br> <label for="{{ form.password.id_for_label }}">Password</label>
+      <br>  {{ form.password }}
+        {{ form.password.errors }}
+    
+        <!-- Add more fields as needed -->
+        
+       
+       <br> <div class="a2"><a href="{% url 'signup' %}">Don't have Account Create</a></div>
+    
+           <div class="sub2"> <button class="submit2"><i class='fa-solid fa-right-to-bracket'> </i></button></div>
+    </div>
+    <div class="m3">
+        <h1>Hello,Friend!</h1>
+               <p>Register with your personal details  <br> to  use  all features</p>
+             <button class="btn2">   <a href="{% url 'signup' %}">Sign Up</a></button>
+            </div>
+                </div>
+
+    </form>
+</body>
+
+</html>
